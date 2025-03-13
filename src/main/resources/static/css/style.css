@@ -1,18 +1,90 @@
+/* 전체 페이지 스타일 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+/* 퀴즈 컨테이너 */
 .quiz-container {
     width: 50%;
-    margin: auto;
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-in-out;
 }
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* 문제 텍스트 */
+#question {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* 버튼 스타일 */
 .option-btn {
     display: block;
     margin: 10px auto;
-    padding: 10px;
-    width: 80%;
+    padding: 12px;
+    width: 85%;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.option-btn:active {
+    transform: scale(0.97);
+    box-shadow: none;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .quiz-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .option-btn {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+/* 부드러운 등장 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
